@@ -1,38 +1,61 @@
 .App {
-  text-align: center;
+  width: 700px;
+  height: 300px;
+  background-color: #86a3be;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.Board {
+  height: 100%;
+  width: 100%;
+  display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Board > * { 
+  flex: 1 0 auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Column {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Cell {
+  flex: 1 0 auto;
+  border-right: solid #c4d8e5 10px;
+  border-bottom: solid #c4d8e5 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Board:not([playing]) .Cell:hover {
+  background-color: white;
 }
+
+.Cell[clicked] { 
+  background-color: #e0edf4;
+}
+
+.Cell[played] { 
+  background-color: #abc1d4;
+}
+
+.Controls {
+  margin-top: 10px;
+  height: 50px;
+  width: 50%;
+  margin-left: 50%;
+  background-color: #86a3be;
+
+  display: flex;
+
+}
+
+.Controls button {
+  width: 100%;
+  margin: 5px;
+  flex: 1 1 auto;
+}
+
+/* .Board .Column {
+  height: 100%;
+} */
